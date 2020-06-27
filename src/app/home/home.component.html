@@ -1,0 +1,46 @@
+<div class="container">
+
+<!-- string interpolation -->
+<h1>{{title}}</h1>
+
+<h1>This is our DevTalk 10</h1>
+<h1>This is {{talk}} {{id}}</h1>
+<h1>This is our {{getStatus()}} {{id}} </h1>
+
+
+<!-- 
+two way binding -->
+<label>User Name</label>
+<input type="text" class='form-control' [(ngModel)]="userName">
+{{userName}}
+
+
+<!-- <input type="text" [(ngModel)]="username"> -->
+
+<!-- property binding & eventBinding -->
+<hr>
+<button class="btn btn-primary" [disabled]="!addNewUser" (click)="getUserStatus()">Add user</button>
+<p *ngIf="addNewUser">{{userCreationStatus}}</p>
+<p>{{addNewUser}}</p>
+
+
+
+
+<!-- 
+property binding
+two way binding
+data binding -->
+<div >
+    <ul>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/users">I will navigate to users component</a>
+      </li>
+      
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/todo">I will navigate to Todo component</a>
+      </li>
+    </ul>
+</div>
+
+
+

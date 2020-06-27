@@ -1,0 +1,28 @@
+
+<!-- *ngIf="expression"
+**ngFor="let item of list"
+[ngStyle]="{style: expression}"
+[ngClass]="{cssClass: expression}" -->
+
+<!-- services -->
+<input type="text" #name>
+<button class="btn btn-primary" (click)="postUser(name)">Add User</button>
+
+<div class= "table" >
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of user" (click)="onSelect(user)">
+                <td>{{user.name}}</td>
+                <td><button class="btn-primary"(click)="deleteUser(user)">Delete</button></td>
+                <td><button class="btn-primary" (click)="updateUser(user)">update</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<app-user-detail *ngIf="selectedUser" [user]='selectedUser'></app-user-detail>
